@@ -1,0 +1,12 @@
+<div class="portfolio">
+{% for item in include.list %}
+    <div>
+        {% comment %}
+            Find the post object (from site.posts) if only a title was provided.
+        {% endcomment %}
+        {% assign post = site.posts | find: "title", item.title %}
+        <h1> {{ post.title }} </h1>
+        <p> {{ post.date }} </p>
+    </div>
+{% endfor %}
+</div>
